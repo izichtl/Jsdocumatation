@@ -1,0 +1,143 @@
+html{
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    
+}
+:target:before {
+    content: "";
+    display: block;
+    height: 10vh;
+    
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #323330;
+}
+header{
+    font-size: 1.3rem;
+}
+#menu-title{
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    
+
+}
+section{
+    margin: 40px 20px 40px 20px; 
+    border-bottom: 1px solid #f8e779;
+}
+p,
+header,
+li,
+a,
+a:visited{
+    color: rgb(231, 231, 231);
+    text-decoration: none;
+}
+li{
+    margin: 13px;
+}
+#menulist{
+    height: 100%;
+}
+
+code{
+    font-size: 1rem;
+    display: flex;
+    background-color: #f8e779;
+    width: auto;
+    padding: 10px 0 10px 30px;
+    margin: 10px auto;
+}
+#logo{
+    background-color: #F0DB4F;
+    grid-area: logo; 
+    position: sticky;
+    top: 0;
+}
+#navbar{
+    color: rgb(231, 231, 231);
+    grid-area: navbar;
+    position: sticky;
+    top: 10vh;
+    left: 0;
+    display: block;
+    grid-row: 2/3;
+    border-right: 1px solid #f8e779;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#main-doc{
+    grid-area: main-doc;
+    
+    
+}
+#container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0 0 0;
+    grid-template-areas: 
+    "logo logo"
+    'navbar main-doc' 
+    'navbar main-doc';
+}
+#btn{
+    display: none;
+}
+
+
+@media only screen and (max-width: 620px){
+    :target:before {
+        content: "";
+        display: block;
+        height: 10vh;
+        margin: -10vh 0 0 0;
+        
+    }
+    #logo{
+        position: sticky;
+        top: 0;
+        grid-row: 1/2;
+        font-size: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    #navbar{ 
+        grid-row: 2/3;
+        grid-column: 1/4;
+        position: static;
+        overflow-y: scroll;
+        scrollbar-color: #323330 #F0DB4F;
+        border-bottom: 1px solid #f8e779;
+        
+    }
+    #main-doc{
+        grid-row: 3/4;
+        grid-column: 1/4;
+    }
+    code{
+        font-size: .5rem;
+        margin: 10px 0 10px 0px;
+    }
+    #btn{
+        display: block;
+        color: #323330;
+        margin: 0 20px 0 0;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    a,
+    a:visited{
+        text-decoration: underline;
+    }
+    h1{
+        margin: 0 0 0 10px;
+    }
+}
